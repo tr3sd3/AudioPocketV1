@@ -1,0 +1,3 @@
+flet
+asyncio
+edge_tts
