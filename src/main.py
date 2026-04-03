@@ -46,14 +46,38 @@ class AudioPocket(ft.Container):
             )
 
 
+        # Voice
+        self.voice = ft.Row (
+            controls=[   
+                ft.TextField(
+                    label="Voz de narración",
+                    color="white",
+                    border_color=self.grey_color,
+                    selection_color=self.pink_color,
+                    hint_text="es-SV-RodrigoNeural",
+                    prefix_icon=ft.Icons.VOICEMAIL,
+                    width=300,
+                    height=50,
+                    border_radius=25,
+                    suffix=ft.IconButton(
+                        icon=ft.Icons.INFO,
+                        tooltip="Es posible cambiar la voz. Versiones disponibles en: https://tts.travisvn.com/"
+                    )                    
+                )
+            ],
+            alignment=ft.MainAxisAlignment.CENTER
+        )
+
+
+        # Main content
         self.content = ft.Column(
             expand=True,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             controls=[
                 self.title_row,
                 self.upload,
-                # self.voice,
                 self.convert,
+                self.voice,
             ]
         )
 
