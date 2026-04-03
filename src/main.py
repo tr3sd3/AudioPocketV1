@@ -25,7 +25,7 @@ class AudioPocket(ft.Container):
         self.upload = ft.Stack(
             height=200,
             width=200,
-            alignment = ft.alignment.center,
+            alignment = ft.Alignment.CENTER,
             controls=[
                 ft.Container(
                     height=150,
@@ -37,8 +37,8 @@ class AudioPocket(ft.Container):
         )
 
         # Convert
-        self.convert = ft.ElevatedButton(
-            text = "Convertir a audio",
+        self.convert = ft.Button(
+            content = ft.Text("Convertir a audio"),
             color="white",
             bgcolor=self.grey_color,
             width=200,
