@@ -96,6 +96,19 @@ class AudioPocket(ft.Container):
             size=body_font_size,
         )
 
+# Reload app
+        self.reload = ft.Button(
+            content=ft.Text("Limpiar pantalla", size=button_font_size),
+            color=text_color,
+            bgcolor=grey_color,
+            width=convert_button_width,
+            height=convert_button_height,
+            #on_click=self.file_label.value("")
+        )
+
+
+
+
         # Main content
         self.content = ft.Column(
             expand=True,
@@ -107,6 +120,7 @@ class AudioPocket(ft.Container):
                 self.voice,
                 self.convert,
                 self.status_label,
+                self.reload,
             ],
         )
 
@@ -187,7 +201,11 @@ class AudioPocket(ft.Container):
 
 def main(page: ft.Page):
     page.title = "AudioPocket"
-    
+    page.theme_mode = "dark"
+    #page.theme = ft.Theme( color_scheme=ft.Colors.PURPLE,)
+    page.window.height = 700
+    page.window.width = 400
+     
     app = AudioPocket(page)
     page.add(app)
 
